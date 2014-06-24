@@ -7,12 +7,12 @@ Vagrant.configure('2') do |config|
 
   config.vm.box = box
   config.autodns.enabled = true
-  config.vm.network 'private_network', type => 'dhcp'
+  config.vm.network :private_network, :type => :dhcp
 
   nodes.each do |node|
     config.vm.define node do |node_config|
       node_config.vm.hostname = node + domain
-      node_config.vm.provision :shell, :inline => 'host test01 || true'
+      node_config.vm.provision :shell, :inline => 'printf "test01 test02 test03" | xargs -d " " -I {} nslookup {}'
     end
   end
 end

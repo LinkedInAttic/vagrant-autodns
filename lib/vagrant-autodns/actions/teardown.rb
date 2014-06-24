@@ -17,8 +17,8 @@ module VagrantAutoDNS
         require_relative '../daemon'
         if VagrantAutoDNS.autodnsdb.dependent_vms.empty? and VagrantAutoDNS::Daemon.running?
           log.info('Stopping AutoDNS Daemon')
-          VagrantAutoDNS::Daemon.stop 
-       end
+          VagrantAutoDNS::Daemon.stop
+        end
       end
     end
   end

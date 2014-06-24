@@ -27,4 +27,4 @@ module VagrantAutoDNS
       end
     end
   end
-end 
+end

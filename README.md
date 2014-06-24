@@ -38,7 +38,7 @@ Add this to your application's Gemfile:
     end
 
     group :plugins do
-      gem 'vagrant-autodns', path: '.'
+      gem 'vagrant-autodns'
     end
     EO_GEMFILE
 ```
@@ -60,9 +60,8 @@ Or fork the vagrant-autodns code from: https://github.com/linkedin/vagrant-autod
 ```
 ## Usage
 
-=======
 Vagrant::AutoDNS runs automatically at machines creation. It starts the daemon
-if not started and adds a the record the DNS database.
+if not started and adds a record to the DNS database.
 
 ### Configuration
 
@@ -76,7 +75,7 @@ AutoDNS usage is configured in your Vagrantfile :
       # Enable the plugin for this config
       # Internal DNS
       config.autodns.enable
-      config.vm.network 'private_network', type => 'dhcp'
+      config.vm.network 'private_network', :type => :dhcp
     end
 ```
 ### CLI
