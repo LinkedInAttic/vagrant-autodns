@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
       Vagrant plugin that uses a SQLite3 backed RubyDNS instance to manage vagrant
       guest VMs dns and domain settings
     SUMMARY
-  spec.homepage      = 'https://github.com/SlideShareInc/vagrant-autodns'
+  spec.homepage      = 'https://github.com/linkedin/vagrant-autodns'
   spec.license       = 'Apache 2.0'
 
   spec.files         = `git ls-files`.split($/)
