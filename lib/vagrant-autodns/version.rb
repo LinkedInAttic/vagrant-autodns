@@ -8,5 +8,5 @@
 #WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 module VagrantAutoDNS
-    VERSION = '0.0.1'
+    VERSION = '0.0.2'
 end
