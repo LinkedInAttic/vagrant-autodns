@@ -15,10 +15,10 @@ module VagrantAutoDNS
     end
 
     #Available subcommands
-    def initialize(argv, env)
-      super
+    def initialize(*args)
+      super(*args)
 
-      @main_args, @sub_command, @sub_args = split_main_and_subcommand(argv)
+      @main_args, @sub_command, @sub_args = split_main_and_subcommand(@argv)
 
       @subcommands = Vagrant::Registry.new
 
@@ -80,6 +80,9 @@ module VagrantAutoDNS
       command_class = @subcommands.get(@sub_command.to_sym) if @sub_command
       return help if !command_class || !@sub_command
       @logger.debug("Invoking command class: #{command_class} #{@sub_args.inspect}")
+
+      # Hack to ensure Vagrantfile gets loaded
+      @env.vagrantfile
 
       # Initialize and execute the command class
       command_class.new(@sub_args, @env).execute
